@@ -4,8 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
-<body>
-    
+<body class="bg-success">
+    <!--I added a header above the table and form and styled it with Bootstrap.
+    I also added breaks before and after it so that it wouldn't be cramped.-->
+    <br>
+    <h1 class="bg-dark text-center text-light pb-2">Game Ratings</h1>
+    <br>
+    <!--I didn't want my content right against the edge of the webpage so I added a margin below the header.-->
+    <section class="mx-3">
+    <!--For the table, I gave it the Bootstrap classes I wanted it to use and made the table head.-->
+    <table class="table table-striped table-success text-center">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Hours Played</th>
+                <th scope="col">Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--I left the body empty as the rows will be added by the user.-->
+        </tbody>
+    </table>
+
+    <br>
+    <h2 class="text-center text-light">Enter a new game here:</h2>
+    <!--After creating another header, I got started on the form itself.
+    I wanted the form to display horizontally, so I had to add an outer div to be a row.-->
+    <form class="bg-dark text-light pb-2 rounded">
+        <!--I am not sure the align items is doing anything.-->
+        <div class="row px-2 align-items-center">
+            <div class="form-group col-sm-3 mx-1">
+                <!--I followed syntax from the Bootstrap documentation for the form labels and form controls.-->
+                <label for="gameTitle" class="col-form-label">Title</label>
+                <input type="text" class="form-control" id="gameTitle">
+            </div>
+            <div class="form-group col-sm-3 mx-1">
+                <label for="hoursPlayed" class="col-form-label">Hours Played</label>
+                <input type="text" class="form-control" id="hoursPlayed">
+            </div>
+            <div class="form-group col-sm-3 mx-1">
+                <label for="dropdownRating" class="col-form-label">Rating (out of five stars)</label>
+                <select class="form-control" id="dropdownRating">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <!--I couldn't seem to stop the button from looking weird when the screen was small.
+            It always extended outside of the form background, and I'm not sure why.
+            I adjusted margins on both it and the form itself and it always grew to extend just past the form.
+            Some of my changes made it worse, but none of them removed the problem.
+            It looks good when the screen is large, but it's annoying that it won't shrink as much as the 
+            rest of the content inside the form.
+            However, I did get it to display horizontally with the rest of the content when the screen is large,
+            which is not what it defaulted to.-->
+            <button type="submit" class="btn btn-success col-sm-1 mt-3 mx-auto">Add</button>
+        </div>
+    </form>
+    </section>
+
+
+
+
+
+<!--I added the script sources before I started on the main HTML.-->
+    <script src="script.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
