@@ -31,20 +31,21 @@
     <br>
     <h2 class="text-center text-light">Enter a new game here:</h2>
     <!--After creating another header, I got started on the form itself.
-    I wanted the form to display horizontally, so I had to add an outer div to be a row.-->
+    I wanted the form to display horizontally, so I had to add an outer div to serve as a row.-->
     <form class="bg-dark text-light pb-2 rounded">
-        <!--I am not sure the align items is doing anything.-->
+        <!--The align items keeps the button further away from the top and bottom of the background.
+        Otherwise, it appears to have no affect on the form groups themselves.-->
         <div class="row px-2 align-items-center">
-            <div class="form-group col-sm-3 mx-1">
+            <div class="form-group col-md-3 mx-1">
                 <!--I followed syntax from the Bootstrap documentation for the form labels and form controls.-->
                 <label for="gameTitle" class="col-form-label">Title</label>
                 <input type="text" class="form-control" id="gameTitle">
             </div>
-            <div class="form-group col-sm-3 mx-1">
+            <div class="form-group col-md-3 mx-1">
                 <label for="hoursPlayed" class="col-form-label">Hours Played</label>
                 <input type="text" class="form-control" id="hoursPlayed">
             </div>
-            <div class="form-group col-sm-3 mx-1">
+            <div class="form-group col-md-3 mx-1">
                 <label for="dropdownRating" class="col-form-label">Rating (out of five stars)</label>
                 <select class="form-control" id="dropdownRating">
                     <option>1</option>
@@ -54,15 +55,10 @@
                     <option>5</option>
                 </select>
             </div>
-            <!--I couldn't seem to stop the button from looking weird when the screen was small.
-            It always extended outside of the form background, and I'm not sure why.
-            I adjusted margins on both it and the form itself and it always grew to extend just past the form.
-            Some of my changes made it worse, but none of them removed the problem.
-            It looks good when the screen is large, but it's annoying that it won't shrink as much as the 
-            rest of the content inside the form.
-            However, I did get it to display horizontally with the rest of the content when the screen is large,
-            which is not what it defaulted to.-->
-            <button type="submit" class="btn btn-success col-sm-1 mt-3 mx-auto">Add</button>
+            <!--The button size was giving me trouble, extending past the edge of the form.
+            It took adding col-auto to fix it, though that also meant it was small on the large screen as well.
+            By changing the internal text from "Add" to "Add New Rating" it looked less comically small.-->
+            <button type="submit" class="btn btn-success col-auto mt-3 mx-auto">Add New Rating</button>
         </div>
     </form>
     </section>
