@@ -32,8 +32,8 @@ submitBtn.addEventListener('click', () => {
     //or if the second was not a number.
     //This worked, and when the alert was active the printing to the console was visible.
     //However, as soon as I closed the alert the object printed to the console disappeared.
-    if (titleInput.value == '' || isNaN(hoursPlayedInput.value) || hoursPlayedInput.value == '') {
-        alert('Please enter a valid title and number of hours played!')
+    if (titleInput.value == '' || isNaN(hoursPlayedInput.value) || hoursPlayedInput.value == '' || ratingInput.value == '') {
+        alert('Please enter a valid title, number of hours played, and rating!')
     } else {
         //I typed all the below out, and it worked to create a row, but only for a second before it disappeared.
         //It basically manifested as a screen flicker, which is confusing.
@@ -47,7 +47,11 @@ submitBtn.addEventListener('click', () => {
         rowNumber++
     }
     //It wasn't resetting the original inputs, so I added the section below.
+    //After changing the ratings to stars, I worked out how to change the ratingInput reset to a star as well using the code.
+    //However, if this were a real website, I would want to ensure that a user couldn't click too fast and
+    //accidentally rate a game one star when they didn't want to. So I added a blank option at the top as the default,
+    //as well as adding ratingInput.value as part of the check in my if statement.
     titleInput.value = ''
     hoursPlayedInput.value = ''
-    ratingInput.value = 1
+    ratingInput.value = ''
 })

@@ -46,13 +46,16 @@
                 <input type="text" class="form-control" id="hoursPlayed">
             </div>
             <div class="form-group col-md-3 mx-1">
-                <label for="dropdownRating" class="col-form-label">Rating (out of five stars)</label>
+                <label for="dropdownRating" class="col-form-label">Rating</label>
                 <select class="form-control" id="dropdownRating">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <!--I wanted stars to display, so I looked up the HTML characters on W3Schools.
+                    I also added a blank option at the top for reset purposes.-->
+                    <option></option>
+                    <option>&#x2606</option>
+                    <option>&#x2606 &#x2606</option>
+                    <option>&#x2606 &#x2606 &#x2606</option>
+                    <option>&#x2606 &#x2606 &#x2606 &#x2606</option>
+                    <option>&#x2606 &#x2606 &#x2606 &#x2606 &#x2606</option>
                 </select>
             </div>
             <!--The button size was giving me trouble, extending past the edge of the form.
